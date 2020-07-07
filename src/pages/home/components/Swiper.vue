@@ -36,13 +36,14 @@
 </script>
 
 <style lang="stylus" scoped>
+    @import "~@/assets/styles/varibles.styl"
     .wrapper >>> .swiper-pagination-bullet-active
         background red !important
     .wrapper
         overflow hidden
         width 100%
         height 0
-        padding-bottom 31.25%
+        padding-bottom 30%
         .swiper-img
             width 100%
 </style>
