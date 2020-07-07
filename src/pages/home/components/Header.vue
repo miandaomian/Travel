@@ -6,10 +6,12 @@
         <div class="header-input">
             <i class="iconfont iconsousuo"></i>输入游玩城市
         </div>
-        <div class="header-right">
-            {{this.city}}
-            <i class="iconfont iconjiantouxia"></i>
-        </div>
+        <router-link to="/city">
+            <div class="header-right">
+                {{this.city}}
+                <i class="iconfont iconjiantouxia"></i>
+            </div>
+        </router-link>
     </div>
 </template>
 
@@ -25,7 +27,7 @@
     @import "~@/assets/styles/varibles.styl"
     .header
         display flex
-        line-height .86rem
+        line-height $headerHeight
         background $bgColor
         color #fff
         .header-left
@@ -48,6 +50,7 @@
             width 1.24rem
             float right
             text-align center
+            color #fff
             .iconjiantouxia
                 margin-left -.04em
                 font-size .24em
