@@ -3,7 +3,7 @@
         <div class="recommend-title">周末游玩</div>
         <ul>
             <li class="item border-bottom"
-                v-for="item of recommendList"
+                v-for="item of list"
                 :key="item.id"
             >
                 <div class="iteam-img-wrapper">
@@ -21,30 +21,8 @@
 <script>
     export default {
         name: "Weekend",
-        data(){
-            return {
-                recommendList:[{
-                    id:'001',
-                    imgUrl:'https://imgs.qunarzz.com/sight/source/1811/f3/86173f863bef61.jpg_r_640x214_52b003ac.jpg',
-                    title:'北京野生动物园',
-                    desc:'北京野生动物园(AAAA景区)'
-                },{
-                    id:'002',
-                    imgUrl:'https://imgs.qunarzz.com/sight/source/1811/f3/86173f863bef61.jpg_r_640x214_52b003ac.jpg',
-                    title:'北京野生动物园',
-                    desc:'北京野生动物园(AAAA景区)'
-                },{
-                    id:'003',
-                    imgUrl:'https://imgs.qunarzz.com/sight/source/1811/f3/86173f863bef61.jpg_r_640x214_52b003ac.jpg',
-                    title:'北京野生动物园',
-                    desc:'北京野生动物园(AAAA景区)'
-                },{
-                    id:'004',
-                    imgUrl:'https://imgs.qunarzz.com/sight/source/1811/f3/86173f863bef61.jpg_r_640x214_52b003ac.jpg',
-                    title:'北京野生动物园',
-                    desc:'北京野生动物园(AAAA景区)'
-                }]
-            }
+        props:{
+            list:Array
         }
     }
 </script>
@@ -52,7 +30,6 @@
 <style lang="stylus" scoped>
     @import "~@/assets/styles/mixins.styl"
     .recommend-title
-        margin-top .2rem
         line-height .8rem
         background #eee
         text-indent .2rem

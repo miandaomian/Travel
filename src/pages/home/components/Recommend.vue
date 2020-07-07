@@ -3,7 +3,7 @@
         <div class="recommend-title">热销</div>
         <ul>
             <li class="item border-bottom"
-                v-for="item of recommendList"
+                v-for="item of list"
                 :key="item.id"
             >
                 <img class="item-img" :src="item.imgUrl">
@@ -20,35 +20,8 @@
 <script>
     export default {
         name: "recommend",
-        data(){
-            return {
-                recommendList:[{
-                    id:'001',
-                    imgUrl:'https://imgs.qunarzz.com/sight/p0/1507/cc/19733fc0135062788140cbb48ae606a7.water.jpg_200x200_d9ebe2fd.jpg',
-                    title:'北京野生动物园',
-                    desc:'北京野生动物园(AAAA景区)'
-                },{
-                    id:'002',
-                    imgUrl:'https://imgs.qunarzz.com/sight/p0/1507/cc/19733fc0135062788140cbb48ae606a7.water.jpg_200x200_d9ebe2fd.jpg',
-                    title:'北京野生动物园',
-                    desc:'北京野生动物园(AAAA景区)'
-                },{
-                    id:'003',
-                    imgUrl:'https://imgs.qunarzz.com/sight/p0/1507/cc/19733fc0135062788140cbb48ae606a7.water.jpg_200x200_d9ebe2fd.jpg',
-                    title:'北京野生动物园',
-                    desc:'北京野生动物园(AAAA景区)'
-                },{
-                    id:'004',
-                    imgUrl:'https://imgs.qunarzz.com/sight/p0/1507/cc/19733fc0135062788140cbb48ae606a7.water.jpg_200x200_d9ebe2fd.jpg',
-                    title:'北京野生动物园',
-                    desc:'北京野生动物园(AAAA景区)'
-                },{
-                    id:'005',
-                    imgUrl:'https://imgs.qunarzz.com/sight/p0/1507/cc/19733fc0135062788140cbb48ae606a7.water.jpg_200x200_d9ebe2fd.jpg',
-                    title:'北京野生动物园',
-                    desc:'北京野生动物园(AAAA景区)'
-                }]
-            }
+        props:{
+            list:Array
         }
     }
 </script>

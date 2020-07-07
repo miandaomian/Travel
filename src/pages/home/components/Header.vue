@@ -6,7 +6,8 @@
         <div class="header-input">
             <i class="iconfont iconsousuo"></i>输入游玩城市
         </div>
-        <div class="header-right">城市
+        <div class="header-right">
+            {{this.city}}
             <i class="iconfont iconjiantouxia"></i>
         </div>
     </div>
@@ -15,6 +16,9 @@
 <script>
     export default {
         name: 'HomeHeader',
+        props:{
+            city:String
+        }
     }
 </script>
 <style lang="stylus" scoped>

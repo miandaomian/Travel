@@ -1,6 +1,6 @@
 <template>
 <div class="icons">
-    <swiper >
+    <swiper :options="swiperOptions">
         <swiper-slide v-for="(page,index) of pages" :key="index">
             <div class="icon"
                  v-for="item of page"
@@ -8,7 +8,7 @@
             >
                 <div class="icon-img">
                     <img class="icon-img-content" :src="item.imgUrl" >
-                    <p class="icon-desc"> {{item.dexc}}</p>
+                    <p class="icon-desc"> {{item.desc}}</p>
                 </div>
             </div>
         </swiper-slide>
@@ -20,51 +20,20 @@
 <script>
 export default {
     name:'HomeIcons',
-    data() {
+    props:{
+        list:Array
+    },
+    data(){
         return {
-            iconsList: [{
-                id: '001',
-                imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-                dexc: '景点门票'
-            }, {
-                id: '002',
-                imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1804/5a/13ceb38dcf262f02.png',
-                dexc: '一日游'
-            },{
-                id: '003',
-                imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1803/4c/eac47dd8def8de02.png',
-                dexc: '北京圆博园北京圆博园北京圆博园'
-            },{
-                id: '004',
-                imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1803/6c/9e54a8540fee0102.png',
-                dexc: '故宫'
-            },{
-                id: '005',
-                imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1803/6c/9e54a8540fee0102.png',
-                dexc: '圆明园'
-            }, {
-                id: '006',
-                imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1803/67/9a1678221b8e0e02.png',
-                dexc: '古北水镇'
-            },{
-                id: '007',
-                imgUrl: 'https://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20193/a40ee278d67000f2a29d2e20f6a029b3.png',
-                dexc: '香山公园'
-            },{
-                id: '008',
-                imgUrl: 'https://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20193/a40ee278d67000f2a29d2e20f6a029b3.png',
-                dexc: '凤凰岭'
-            },{
-                id: '009',
-                imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1803/bd/9f7b9b2b60c1502.png',
-                dexc: '踏青赏花'
-            }]
+            swiperOptions:{
+                autoplay:false
+            }
         }
     },
     computed: {
         pages (){
             const pages= []
-            this.iconsList.forEach((item,index)=>{
+            this.list.forEach((item,index)=>{
                 const page=Math.floor(index/8)
                 if(!pages[page]){
                     pages[page]=[]
