@@ -14,7 +14,7 @@
 </template>
 
 <script>
-    import axios from 'axios'
+    import axios from 'axios';
     import CityHeader from "./components/Header";
     import CitySearch from "./components/Search";
     import CityList from "./components/List";
